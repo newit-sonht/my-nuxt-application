@@ -12,7 +12,17 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: '/sematic/semantic.min.css'}
+    ],
+    script: [
+      { src: 'https://code.jquery.com/jquery-3.1.1.min.js',
+        integrity: 'sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=',
+        crossorigin: "anonymous"
+      },
+      {
+        src: "/sematic/semantic.min.js"
+      }
     ]
   },
 
