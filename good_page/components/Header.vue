@@ -1,3 +1,33 @@
 <template>
-  <header>ME SECTION</header>
+<header>
+    <div class="ui secondary pointing menu">
+        <a href="#" class="item">
+            <img src="https://i.pinimg.com/236x/5c/30/63/5c3063e5f763e51bc667e1f2fbb0112f--panda-logo-design-love.jpg" alt="Logo" />
+        </a>
+        <a href="#" class="active item">
+            Home
+        </a>
+        <a href="#" class="item">
+            Messages
+        </a>
+        <a href="#" class="item">
+            Friends
+        </a>
+        <div class="right menu">
+            <a class="ui item">
+                Logout
+            </a>
+        </div>
+    </div>
+    <div class="divider"></div>
+</header>
 </template>
+
+<style scoped>
+  a {
+    font-size: 16px;
+  }
+  .divider{
+    margin-bottom: 2rem;
+  }
+</style>
