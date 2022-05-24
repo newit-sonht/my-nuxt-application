@@ -32,72 +32,106 @@
 
 <script>
 import Card from "@/components/Card.vue";
+import bongtran from "@/assets/image/post/bongtran.png";
 
 export default {
   components: { Card },
     name: 'IndexPage',
-    data() {
-      return {
-        LoadedCards: [
-          {
-            id:"1",
-            user_avatar:"https://i.pinimg.com/474x/89/61/17/8961179c2c0a30c14eded7acc31a2323.jpg",
-            user_name:"Linh cáo",
-            image_content:"https://i.pinimg.com/originals/f0/fb/a4/f0fba40dab2ee4d729b7d4dc02606ad0.jpg",
-            like_count:"270",
-            comment_count:"4",
-          },
-          {
-            id:"2",
-            user_avatar:"https://topinternationaldatingsites.com/wp-content/uploads/2020/09/sexy-girl-150x150.jpg",
-            user_name:"Hoa xinh gái",
-            image_content:"https://i.pinimg.com/474x/97/c4/50/97c450a08b6a5b8709aa125ecc2c0dde.jpg",
-            like_count:"1289",
-            comment_count:"302",
-          },
-          {
-            id:"3",
-            user_avatar:"https://i.pinimg.com/474x/93/b3/f8/93b3f8ac01d0b8f9b55c386e65d06136.jpg",
-            user_name:"Russian Girl",
-            image_content:"https://i.pinimg.com/originals/9a/1b/80/9a1b80e94b2509a9c0127e32a84f7d6b.jpg",
-            like_count:"2485",
-            comment_count:"130",
-          },
-          {
-            id:"4",
-            user_avatar:"https://i.pinimg.com/550x/b0/d5/36/b0d536ca4d436c5db20f0db1609ca2d7.jpg",
-            user_name:"Đắng",
-            image_content:"https://i.pinimg.com/474x/fc/a5/59/fca55989f5d69aa01137b7b479fb5192.jpg",
-            like_count:"4500",
-            comment_count:"1300",
-          },
-          {
-            id:"5",
-            user_avatar:"https://i.scdn.co/image/ab67616d00001e0299c4288ee13243bdf8943959",
-            user_name:"Maria Chan",
-            image_content:"https://i.pinimg.com/originals/00/ed/33/00ed33901ed3c528e9cb03c783786462.jpg",
-            like_count:"773",
-            comment_count:"53",
-          },
-          {
-            id:"6",
-            user_avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCk0Uliwudf7yc5yTVBfyr7QaOMNgVEq9AHhaKGXtAz-BjlGbG6HdvXtYPFYp1gv-IX00&usqp=CAU",
-            user_name:"Kính tròn",
-            image_content:"https://i.pinimg.com/222x/7e/99/05/7e990557d794e3d5cb3883b4700db3a0.jpg",
-            like_count:"870",
-            comment_count:"63",
-          },
-          {
-            id:"7",
-            user_avatar:"/_nuxt/assets/image/post/bongtran.png",
-            user_name:"Bong Tran",
-            image_content:"/_nuxt/assets/image/post/bongtran.png",
-            like_count:"1m",
-            comment_count:"1.2k",
-          },
-        ]
-      }
+    asyncData(context) {
+      return new Promise((resolve,reject) => {
+        // setTimeout(()=>{
+        //   resolve({
+        //     LoadedCards: [
+        //       {
+        //         id:"1",
+        //         user_avatar:"https://i.pinimg.com/474x/89/61/17/8961179c2c0a30c14eded7acc31a2323.jpg",
+        //         user_name:"Linh cáo",
+        //         image_content:"https://i.pinimg.com/originals/f0/fb/a4/f0fba40dab2ee4d729b7d4dc02606ad0.jpg",
+        //         like_count:"270",
+        //         comment_count:"4",
+        //       },
+        //       {
+        //         id:"2",
+        //         user_avatar:"https://topinternationaldatingsites.com/wp-content/uploads/2020/09/sexy-girl-150x150.jpg",
+        //         user_name:"Hoa xinh gái",
+        //         image_content:"https://i.pinimg.com/474x/97/c4/50/97c450a08b6a5b8709aa125ecc2c0dde.jpg",
+        //         like_count:"1289",
+        //         comment_count:"302",
+        //       }
+        //     ]
+        // });
+        // },2000)
+        reject(new Error());
+      })
+      .then(data => {
+        return data;
+      })
+      .catch(e => {
+        context.error(e);
+      });
     },
+    // data() {
+    //   return {
+    //     LoadedCards: [
+    //       {
+    //         id:"1",
+    //         user_avatar:"https://i.pinimg.com/474x/89/61/17/8961179c2c0a30c14eded7acc31a2323.jpg",
+    //         user_name:"Linh cáo",
+    //         image_content:"https://i.pinimg.com/originals/f0/fb/a4/f0fba40dab2ee4d729b7d4dc02606ad0.jpg",
+    //         like_count:"270",
+    //         comment_count:"4",
+    //       },
+    //       {
+    //         id:"2",
+    //         user_avatar:"https://topinternationaldatingsites.com/wp-content/uploads/2020/09/sexy-girl-150x150.jpg",
+    //         user_name:"Hoa xinh gái",
+    //         image_content:"https://i.pinimg.com/474x/97/c4/50/97c450a08b6a5b8709aa125ecc2c0dde.jpg",
+    //         like_count:"1289",
+    //         comment_count:"302",
+    //       },
+    //       {
+    //         id:"3",
+    //         user_avatar:"https://i.pinimg.com/474x/93/b3/f8/93b3f8ac01d0b8f9b55c386e65d06136.jpg",
+    //         user_name:"Russian Girl",
+    //         image_content:"https://i.pinimg.com/originals/9a/1b/80/9a1b80e94b2509a9c0127e32a84f7d6b.jpg",
+    //         like_count:"2485",
+    //         comment_count:"130",
+    //       },
+    //       {
+    //         id:"4",
+    //         user_avatar:"https://i.pinimg.com/550x/b0/d5/36/b0d536ca4d436c5db20f0db1609ca2d7.jpg",
+    //         user_name:"Đắng",
+    //         image_content:"https://i.pinimg.com/474x/fc/a5/59/fca55989f5d69aa01137b7b479fb5192.jpg",
+    //         like_count:"4500",
+    //         comment_count:"1300",
+    //       },
+    //       {
+    //         id:"5",
+    //         user_avatar:"https://i.scdn.co/image/ab67616d00001e0299c4288ee13243bdf8943959",
+    //         user_name:"Maria Chan",
+    //         image_content:"https://i.pinimg.com/originals/00/ed/33/00ed33901ed3c528e9cb03c783786462.jpg",
+    //         like_count:"773",
+    //         comment_count:"53",
+    //       },
+    //       {
+    //         id:"6",
+    //         user_avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCk0Uliwudf7yc5yTVBfyr7QaOMNgVEq9AHhaKGXtAz-BjlGbG6HdvXtYPFYp1gv-IX00&usqp=CAU",
+    //         user_name:"Kính tròn",
+    //         image_content:"https://i.pinimg.com/222x/7e/99/05/7e990557d794e3d5cb3883b4700db3a0.jpg",
+    //         like_count:"870",
+    //         comment_count:"63",
+    //       },
+    //       {
+    //         id:"7",
+    //         user_avatar: bongtran,
+    //         user_name:"Bong Tran",
+    //         image_content: bongtran,
+    //         like_count:"1m",
+    //         comment_count:"1.2k",
+    //       },
+    //     ]
+    //   }
+    // },
     layout: 'main_layout',
     component: Card
 }

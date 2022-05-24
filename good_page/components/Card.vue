@@ -1,6 +1,5 @@
 <template>
 <div class="ui card">
-    <h3>{{ id }}</h3>
     <div class="content" style="user-select: auto;">
         <div class="right floated meta" style="user-select: auto;">14h</div>
         <img class="ui avatar image"

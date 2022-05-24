@@ -13,7 +13,8 @@
 
   }
   .container form {
-    width: 800px;
+    max-width: 800px;
+    width: 90vw;
     margin: auto;
   }
 </style>
