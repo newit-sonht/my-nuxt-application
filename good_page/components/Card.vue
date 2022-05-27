@@ -32,6 +32,7 @@
     width: 282px;
   }
   .image.content {
+    min-height: 289px;
     max-height: 290px;
     max-width: 290px;
     overflow: hidden;

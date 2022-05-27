@@ -25,7 +25,7 @@
       <label for="her_cmt_count">Her comment count</label>
       <input required id="her_cmt_count" type="number" v-model="Post.comment_count" placeholder="Your lady comment count" />
     </div>
-    <button class="ui button" type="submit"> Upload image </button>
+    <button class="ui button" type="submit">  Ok, Let's public your lady </button>
   </form>
 </template>
 
