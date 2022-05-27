@@ -10,6 +10,9 @@
         <a href="/create-new" class="item">
             Create
         </a>
+        <a href="/son" class="item">
+            Son
+        </a>
         <div class="right menu">
             <a class="ui item">
                 Logout

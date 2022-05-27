@@ -5,7 +5,7 @@
         <img class="ui avatar image"
              v-bind:src="user_avatar"> {{ user_name }}
     </div>
-    <div class="image" style="user-select: auto;">
+    <div class="image content" style="user-select: auto;">
         <img v-bind:src="image_content" />
     </div>
     <div class="content" style="user-select: auto;">
@@ -27,7 +27,12 @@
 <style scoped>
   img{
     width: 282px;
-    height: 282px;
+  }
+  .image.content {
+    max-height: 290px;
+    max-width: 290px;
+    overflow: hidden;
+    padding: 0 !important;
   }
 </style>
 
