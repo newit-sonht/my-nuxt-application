@@ -1,0 +1,49 @@
+<template>
+<div class="container">
+  <EditForm :my_data="my_data" @submit="updatePost" />
+</div>
+</template>
+
+<style scoped>
+  .container {
+    align-items: center;
+    align-content: center;
+    width: 50vw;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-sizing: border-box;
+    padding: 35px;
+  }
+</style>
+
+<script>
+import axios from 'axios'
+import EditForm from '@/components/edit/EditForm.vue'
+
+export default {
+  name: "CardDetailEdit",
+  layout: 'main_layout',
+  component: EditForm,
+  asyncData(context) {
+    return axios.get('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy/' + context.params.id + '.json')
+      .then(res => {
+        return {
+          my_data: res.data
+        }
+      })
+      .catch(e => console.log(e));
+  },
+  methods: {
+    updatePost(MyData) {
+      axios.put('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy/' +
+        this.$route.params.id
+        + '.json', MyData)
+        .then(res => {
+          // direct to other page
+           window.location.href = '/card/' + this.$route.params.id;
+        })
+        .catch(e => console.log(e));
+    }
+  },
+}
+</script>
