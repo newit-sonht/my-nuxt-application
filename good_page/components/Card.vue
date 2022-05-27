@@ -1,5 +1,5 @@
 <template>
-<div class="ui card">
+<a :href="'/card/' + _id" class="ui card">
     <div class="content" style="user-select: auto;">
         <div class="right floated meta" style="user-select: auto;">14h</div>
         <img class="ui avatar image"
@@ -22,10 +22,13 @@
             <input type="text" placeholder="Add Comment..." style="user-select: auto;">
         </div>
     </div>
-</div>
+</a>
 </template>
 <style scoped>
-  img{
+  a {
+    color: unset;
+  }
+  img {
     width: 282px;
   }
   .image.content {
@@ -39,6 +42,10 @@
 <script>
 export default {
   props: {
+    _id: {
+      type: String,
+      required: false
+    },
     id: {
       type: String,
       required: true

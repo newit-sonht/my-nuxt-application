@@ -10,6 +10,7 @@
               :image_content="item.image_content"
               :like_count="item.like_count"
               :comment_count="item.comment_count"
+              :_id="item._id"
             />
         </div>
         <div class="divider"></div>
@@ -32,7 +33,6 @@
 
 <script>
 import Card from "@/components/Card.vue";
-import bongtran from "@/assets/image/post/bongtran.png";
 
 export default {
   components: { Card },

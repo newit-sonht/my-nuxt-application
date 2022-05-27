@@ -15,9 +15,9 @@ const createStore = () => {
         nuxtServerInit(vueContext, context) {
           return axios.get('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy.json')
             .then(res => {
-              const arr = []
+              const arr = [];
               for(const key in res.data) {
-                arr.push({ ...res.data[key] });
+                arr.push({ ...res.data[key], _id : key });
               }
               vueContext.commit('setPosts', arr);
             })
