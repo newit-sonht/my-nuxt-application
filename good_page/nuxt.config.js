@@ -1,14 +1,14 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'good_page',
+    title: 'Good page',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'My cool web for watching the girl' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -24,6 +24,20 @@ export default {
         src: "/sematic/semantic.min.js"
       }
     ]
+  },
+
+  // Customize loading bar
+  loading: {
+    color: '#fa923f',
+    height: '10px',
+    duration: 5000
+  },
+  loadingIndicator: {
+    name: 'circle',
+  },
+
+  env: {
+    default_text: 'WELCOME HOANG SON RETURN YOUR PAGE !'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
