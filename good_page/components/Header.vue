@@ -30,4 +30,7 @@
   .divider{
     margin-bottom: 2rem;
   }
+  header {
+    border-top: 5px solid purple;
+  }
 </style>

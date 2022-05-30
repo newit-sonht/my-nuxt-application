@@ -29,9 +29,10 @@ export default {
     component: CreateForm,
     methods: {
       onSubmitted(postData) {
-        axios.post('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy.json', postData)
-          .then(result => console.log(result))
-          .catch(e => console.log(e));
+        this.$store.dispatch('addPost', postData)
+          .then(() => {
+            this.$router.push('/complete');
+          });
       }
     },
 }

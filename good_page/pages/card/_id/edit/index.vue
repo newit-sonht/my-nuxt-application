@@ -28,21 +28,18 @@ export default {
     return axios.get('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy/' + context.params.id + '.json')
       .then(res => {
         return {
-          my_data: res.data
+          my_data: { ...res.data, id: context.params.id }
         }
       })
       .catch(e => console.log(e));
   },
   methods: {
     updatePost(MyData) {
-      axios.put('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy/' +
-        this.$route.params.id
-        + '.json', MyData)
-        .then(res => {
-          // direct to other page
-           window.location.href = '/card/' + this.$route.params.id;
+      this.$store.dispatch('editPost',MyData)
+        .then(() => {
+          window.location.href = '/card/' + this.$route.params.id;
         })
-        .catch(e => console.log(e));
+        .catch(e => {console.log(e)})
     }
   },
 }

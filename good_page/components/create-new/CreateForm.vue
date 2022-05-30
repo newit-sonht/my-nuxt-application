@@ -54,7 +54,6 @@ export default {
   methods: {
     onSave() {
       this.$emit('submit', this.Post);
-      window.location.href = '/complete';
     }
   },
 }
