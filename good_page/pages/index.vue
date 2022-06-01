@@ -32,18 +32,14 @@
 </style>
 
 <script>
-import Card from "@/components/Card.vue";
-
 export default {
-  components: { Card },
     name: 'IndexPage',
     computed: {
       LoadedCards() {
         return this.$store.getters.loadedPosts;
       }
     },
-    layout: 'main_layout',
-    component: Card
+    layout: 'main_layout'
 }
 </script>
 

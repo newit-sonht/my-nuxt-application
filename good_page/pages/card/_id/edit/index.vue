@@ -18,12 +18,10 @@
 
 <script>
 import axios from 'axios'
-import EditForm from '@/components/edit/EditForm.vue'
 
 export default {
   name: "CardDetailEdit",
   layout: 'main_layout',
-  component: EditForm,
   asyncData(context) {
     return axios.get('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy/' + context.params.id + '.json')
       .then(res => {
