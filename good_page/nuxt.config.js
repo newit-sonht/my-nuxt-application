@@ -37,11 +37,12 @@ export default {
   },
 
   env: {
-    default_text: 'WELCOME HOANG SON RETURN YOUR PAGE !'
+    default_text: 'WELCOME HOANG SON RETURN YOUR PAGE !',
+    baseUrl: process.env.BASE_URL || 'https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/'
   },
 
   transition: {
-    name: 'fade',
+    name: 'create-new',
     mode: 'out-in'
   },
 
@@ -51,7 +52,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~plugins/core-components.js'
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -63,7 +65,11 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios'
   ],
+  axios: {
+    baseUrl: process.env.BASE_URL || 'https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

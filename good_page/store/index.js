@@ -1,5 +1,4 @@
 import Vuex from "vuex"
-import axios from "axios"
 
 const createStore = () => {
     return new Vuex.Store({
@@ -22,11 +21,11 @@ const createStore = () => {
       },
       actions: {
         nuxtServerInit(vueContext, context) {
-          return axios.get('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy.json')
+          return context.app.$axios.$get('/laydy.json')
             .then(res => {
               const arr = [];
-              for(const key in res.data) {
-                arr.push({ ...res.data[key], _id : key });
+              for(const key in res) {
+                arr.push({ ...res[key], _id : key });
               }
               vueContext.commit('setPosts', arr);
             })
@@ -36,16 +35,14 @@ const createStore = () => {
           vueContext.commit('setPosts');
         },
         addPost(vueContext, post) {
-          return axios.post('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy.json', post)
+          return this.$axios.$post('/laydy.json', post)
           .then(result => {
-            vueContext.commit('addPost', { ...post, _id: result.data.name });
+            vueContext.commit('addPost', { ...post, _id: result.name });
           })
           .catch(e => console.log(e));
         },
         editPost(vueContext, MyData) {
-          return axios.put('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy/' +
-          MyData.id
-          + '.json', MyData)
+          return this.$axios.$put('/laydy/' + MyData.id + '.json', MyData)
           .then()
           .catch(e => console.log(e));
         }
