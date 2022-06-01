@@ -11,16 +11,10 @@
     <div class="content" style="user-select: auto;">
         <span class="right floated" style="user-select: auto;">
             <i class="heart outline like icon" style="user-select: auto;"></i>
-            {{ like_count }}
+            {{ convert_number(like_count) }}
         </span>
         <i class="comment icon" style="user-select: auto;"></i>
-        {{ comment_count }} comments
-    </div>
-    <div class="extra content" style="user-select: auto;">
-        <div class="ui large transparent left icon input" style="user-select: auto;">
-            <i class="heart outline icon" style="user-select: auto;"></i>
-            <input type="text" placeholder="Add Comment..." style="user-select: auto;">
-        </div>
+        {{ convert_number(comment_count) }} comments
     </div>
 </a>
 </template>
@@ -64,13 +58,20 @@ export default {
       default: 'https://icons.iconarchive.com/icons/guillendesign/variations-3/256/Default-Icon-icon.png'
     },
     like_count: {
-      type: String,
-      default: "0"
+      type: [Number,String],
+      default: 0
     },
     comment_count: {
-      type: String,
-      default: "0c"
+      type: [Number,String],
+      default: 0
     }
-  }
+  },
+  methods: {
+    convert_number (value){
+      if(value > 1000000) return value/1000000 + 'M';
+      else if(value > 1000) return value/1000 + 'K';
+      return value;
+    }
+  },
 }
 </script>

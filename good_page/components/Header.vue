@@ -32,5 +32,6 @@
   }
   header {
     border-top: 5px solid purple;
+    background-color: white;
   }
 </style>

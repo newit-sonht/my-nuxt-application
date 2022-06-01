@@ -26,7 +26,7 @@
   .container {
     align-items: center;
     align-content: center;
-    width: 50vw;
+    width: 60vw;
     margin: auto;
   }
 </style>

@@ -27,7 +27,7 @@ const createStore = () => {
               for(const key in res) {
                 arr.push({ ...res[key], _id : key });
               }
-              vueContext.commit('setPosts', arr);
+              vueContext.commit('setPosts', arr.reverse());
             })
             .catch(e => console.log(e));
         },
