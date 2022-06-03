@@ -22,6 +22,7 @@
 export default {
     name: 'IndexPage',
     layout: 'main_layout',
+    middleware: ['check-auth','auth'],
     methods: {
       onSubmitted(postData) {
         this.$store.dispatch('addPost', postData)

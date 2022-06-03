@@ -6,5 +6,6 @@
 export default {
   name: "CardDetail",
   layout: 'main_layout',
+  middleware: ['check-auth','auth'],
 }
 </script>

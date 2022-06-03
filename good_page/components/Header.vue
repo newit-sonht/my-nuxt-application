@@ -20,9 +20,9 @@
           <a href="/authen/signin" class="item">
             Signin
           </a>
-            <!-- <a class="ui item">
-                Logout
-            </a> -->
+          <a class="ui item" @click="logout">
+              Logout
+          </a>
         </div>
     </div>
     <div class="divider"></div>
@@ -41,3 +41,17 @@
     background-color: white;
   }
 </style>
+
+<script>
+
+export default ({
+  name: "Header",
+  methods: {
+    logout() {
+      this.$store.dispatch('logout');
+      this.$router.push('/authen/signin')
+    }
+  },
+})
+</script>
+

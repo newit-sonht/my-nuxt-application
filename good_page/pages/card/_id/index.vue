@@ -116,6 +116,7 @@ import axios from 'axios'
 export default {
   name: "CardDetail",
   layout: 'main_layout',
+  middleware: ['check-auth','auth'],
   asyncData(context) {
     return axios.get('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy/' + context.params.id + '.json')
       .then(res => {

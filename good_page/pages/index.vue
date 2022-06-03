@@ -34,6 +34,7 @@
 <script>
 export default {
     name: 'IndexPage',
+    middleware: ['check-auth','auth'],
     computed: {
       LoadedCards() {
         return this.$store.getters.loadedPosts;
