@@ -4,18 +4,6 @@
 </div>
 </template>
 
-<style scoped>
-  .container {
-    align-items: center;
-    align-content: center;
-    width: 50vw;
-    margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    box-sizing: border-box;
-    padding: 35px;
-  }
-</style>
-
 <script>
 import axios from 'axios'
 
@@ -35,9 +23,9 @@ export default {
     updatePost(MyData) {
       this.$store.dispatch('editPost',MyData)
         .then(() => {
-          window.location.href = '/card/' + this.$route.params.id;
+          // window.location.href = '/card/' + this.$route.params.id;
         })
-        .catch(e => {console.log(e)})
+        .catch()
     }
   },
 }

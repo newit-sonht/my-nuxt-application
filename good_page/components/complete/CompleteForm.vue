@@ -35,13 +35,4 @@
     text-align: center;
     font-style: italic;
   }
-  .container {
-    align-items: center;
-    align-content: center;
-    width: 50vw;
-    margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    box-sizing: border-box;
-    padding: 35px;
-  }
 </style>

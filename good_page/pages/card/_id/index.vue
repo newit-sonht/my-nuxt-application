@@ -101,16 +101,6 @@
     width: 200px;
     margin: auto;
   }
-  .container {
-    background-color: white;
-    align-items: center;
-    align-content: center;
-    width: 50vw;
-    margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    box-sizing: border-box;
-    padding: 35px;
-  }
   .small_text{
     font-size: 18px;
     font-style: italic;

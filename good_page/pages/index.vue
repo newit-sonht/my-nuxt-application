@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="container">
+    <div class="main_page">
         <div class="ui link cards">
             <Card v-for="item in LoadedCards"
               :key="item.id"
@@ -23,7 +23,7 @@
     height: 15vh;
   }
 
-  .container {
+  .main_page {
     align-items: center;
     align-content: center;
     width: 60vw;

@@ -38,7 +38,8 @@ export default {
 
   env: {
     default_text: 'WELCOME HOANG SON RETURN YOUR PAGE !',
-    baseUrl: process.env.BASE_URL || 'https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/'
+    baseUrl: process.env.BASE_URL || 'https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/',
+    apiKey: 'AIzaSyBjcsdByrAFTpJ8aTyR9gI0y7hNl_V6b2w'
   },
 
   transition: {
@@ -48,6 +49,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~assets/css/all.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

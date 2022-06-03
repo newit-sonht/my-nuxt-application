@@ -10,7 +10,6 @@
   .container {
     width: 100%;
     box-shadow: black;
-
   }
   .container form {
     max-width: 800px;
