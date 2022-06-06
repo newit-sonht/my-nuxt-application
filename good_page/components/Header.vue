@@ -14,12 +14,6 @@
             Son
         </a>
         <div class="right menu">
-          <a href="/authen/signup" class="item">
-            Signup
-          </a>
-          <a href="/authen/signin" class="item">
-            Signin
-          </a>
           <a class="ui item" @click="logout">
               Logout
           </a>

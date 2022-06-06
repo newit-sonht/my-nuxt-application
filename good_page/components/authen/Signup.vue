@@ -9,7 +9,7 @@
     <!-- Password -->
     <div class="field">
       <label>Password</label>
-      <input required type="password" name="pw" placeholder="Password" v-model="data.password">
+      <input minlength="8" required type="password" name="pw" placeholder="Password" v-model="data.password">
     </div>
     <!-- Checkbox -->
     <div class="field">
@@ -34,8 +34,8 @@ export default {
   data() {
     return {
       data: {
-        email: 'test@test.com',
-        password: 'test123',
+        email: '',
+        password: '',
         returnSecureToken: true
       }
     }

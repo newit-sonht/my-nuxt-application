@@ -34,8 +34,8 @@ export default {
   data() {
     return {
       data: {
-        email: 'test@test.com',
-        password: 'test123',
+        email: '',
+        password: '',
         returnSecureToken: true
       }
     }
