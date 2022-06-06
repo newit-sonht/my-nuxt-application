@@ -11,6 +11,7 @@
               :like_count="item.like_count"
               :comment_count="item.comment_count"
               :_id="item._id"
+              :enable="item.enable"
             />
         </div>
         <div class="divider"></div>

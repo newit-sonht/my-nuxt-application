@@ -1,15 +1,24 @@
 <template>
-<div>
+<form>
   <img class="premium" :src="my_data.image_content" alt="background-image" />
   <div class="container">
     <!-- Action navigation -->
     <div class="action_navigation">
-      <nuxt-link to="/">
-        <button type="button" class="ui left floated button">Home</button>
+      <nuxt-link to="/" v-if="my_data.enable">
+        <button type="button" class="ui left floated button">
+          <i class="angle left icon" style="user-select: auto;"></i>
+          Home</button>
+      </nuxt-link>
+      <nuxt-link to="/private" v-else>
+        <button type="button" class="ui left floated button">
+          <i class="angle left icon" style="user-select: auto;"></i>
+          Private Post</button>
       </nuxt-link>
       <nuxt-link :to="'/card/' + this.$route.params.id + '/edit'">
         <button type="button" class="ui right floated green button">Edit</button>
       </nuxt-link>
+       <button type="button" class="ui right floated blue button" @click="setPostStatus" v-if="my_data.enable">Public</button>
+       <button type="button" class="ui right floated red button" @click="setPostStatus" v-else>Private</button>
     </div>
     <div class="ui divider"></div>
 
@@ -43,7 +52,7 @@
       <img class="ui fluid image" :src="my_data.image_content" alt="image content"/>
     </div>
   </div>
-</div>
+</form>
 </template>
 
 <style scoped>
@@ -56,7 +65,7 @@
   }
   .gem.outline.icon {
     background: -webkit-linear-gradient(#1138f7, #dc5ee0);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   h1.title {
@@ -121,7 +130,7 @@ export default {
     return axios.get('https://my-nuxt-project-3148e-default-rtdb.asia-southeast1.firebasedatabase.app/laydy/' + context.params.id + '.json')
       .then(res => {
         return {
-          my_data: res.data
+          my_data: { ...res.data, id: context.params.id }
         }
       })
       .catch(e => console.log(e));
@@ -131,6 +140,15 @@ export default {
       if(value > 1000000) return value/1000000 + 'M';
       else if(value > 1000) return value/1000 + 'K';
       return value;
+    },
+    setPostStatus() {
+      this.$store.dispatch('setPostStatus', this.my_data)
+      .then(() => {
+        setTimeout(() => {
+          window.location.href = "/";
+        },1000)
+      })
+      .catch(e => console.log(e));
     }
   },
 }

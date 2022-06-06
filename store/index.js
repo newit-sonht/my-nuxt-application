@@ -8,6 +8,10 @@ const createStore = () => {
         token : null
       },
       mutations: {
+        getPosts(state) {
+          console.log(state.loadedPosts);
+          return state.loadedPosts;
+        },
         setPosts(state, posts){
           state.loadedPosts = posts;
         },
@@ -25,7 +29,7 @@ const createStore = () => {
         },
         clearToken(state) {
           state.token = null;
-        }
+        },
       },
       actions: {
         nuxtServerInit(vueContext, context) {
@@ -56,7 +60,18 @@ const createStore = () => {
         },
 
         editPost(vueContext, MyData) {
-          console.log('editPost token : ', vueContext.state.token);
+          return this.$axios.$put('/laydy/' + MyData.id + '.json?auth=' + vueContext.state.token, MyData)
+          .then()
+          .catch(e => {
+            console.log(e);
+            alert(' Sorry you are not authorized yet !!');
+          });
+        },
+
+        setPostStatus(vueContext,MyData) {
+          // set data
+          if(MyData.enable) MyData.enable = false;
+          else MyData.enable = true;
           return this.$axios.$put('/laydy/' + MyData.id + '.json?auth=' + vueContext.state.token, MyData)
           .then()
           .catch(e => {

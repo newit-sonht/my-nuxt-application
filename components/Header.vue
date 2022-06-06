@@ -10,6 +10,9 @@
         <a href="/create-new" class="item">
             Create
         </a>
+        <a href="/private" class="item">
+            Private
+        </a>
         <a href="/son" class="item">
             Son
         </a>

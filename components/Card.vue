@@ -1,5 +1,5 @@
 <template>
-<a :href="'/card/' + _id" class="ui card">
+<a :href="'/card/' + _id" class="ui card" v-if="enable">
     <div class="content" style="user-select: auto;">
         <div class="right floated meta" style="user-select: auto;">14h</div>
         <img class="ui avatar image"
@@ -64,6 +64,10 @@ export default {
     comment_count: {
       type: [Number,String],
       default: 0
+    },
+    enable: {
+      type: [Boolean,String],
+      default: true
     }
   },
   methods: {

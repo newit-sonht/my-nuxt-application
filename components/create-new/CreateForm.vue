@@ -48,6 +48,7 @@ export default {
         image_content: '',
         like_count:"",
         comment_count:"",
+        enable:true,
       },
     }
   },
