@@ -1,7 +1,6 @@
 <template>
 <a :href="'/card/' + _id" class="ui card" v-if="enable">
     <div class="content" style="user-select: auto;">
-        <div class="right floated meta" style="user-select: auto;">14h</div>
         <img class="ui avatar image"
              v-bind:src="user_avatar"> {{ user_name }}
     </div>
